@@ -7,11 +7,21 @@ links.forEach(link => {
   });
 });
 
-//botón CAMBIAR Estilo de la página
+//Botón CAMBIAR Estilo de la página
+
 const cambioBtn = document.querySelector('#cambiarEstilo');
 
 cambioBtn.addEventListener('click', function(){
   document.body.classList.toggle('cambio-estilo');
+});
+
+const menuHamburg = document.querySelector('#menu_hamburguer')
+
+//Aquí estoy vreificaando en consola que sí tomé el elemento que quiero modificar
+console.log(menuHamburg);
+
+menuHamburg.addEventListener('click', function(){
+  document.body.classList.toggle('mobile-menu-active')
 });
 
 //galeria

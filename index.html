@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/diseno-ux.png">
+
     <title>Anicia Flores</title>
 
     <!-- Link a mi CSS -->
     <link rel="stylesheet" href="./css/styles.css">
+    <!-- Link de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <header>
-
+    <header class="cambioHeader">
         <figure>
-                <img src="img/LogoSample_ByTailorBrands-removebg-preview.png" alt="Logo" class="logo">
+            <img src="./img/LogoSinFondo.png" alt="Logo" class="logo">
         </figure> 
+
+        <div class="checkbox-wrapper-25" id="cambiarEstilo">
+            <input type="checkbox">
+        </div>
         
+        <button id="menu_hamburguer"><i class="bi bi-list" id="open_menu"></i><i class="bi bi-x-lg" id="close_menu"></i></button>
+
         <nav>
              <ul>
                 <li><a class="active" href="#inicio">Inicio</a></li>
@@ -27,91 +37,70 @@
               
     </header>
 
-    <!-- La estructura básica y la vinculación con CSS estan listas. A codear! 💪  -->
-    <!-- En este archivo escriban su HTML -->
-
-    <main>
-
-               
-        <section class="inicio" id="inicio">
-            
-               <figure class="gallery">
-                   <img src="img/Yo.jpg" alt="Foto Anicia" loading="lazy">
-               </figure>
+    <main>           
+        <section class="inicio" id="inicio">            
+            <figure class="floating-image">
+                <img src="./img/IMG_20230618_163305426.jpg" alt="Foto Anicia" loading="lazy">
+            </figure>
             
             <article class="presentacion">
                 <h1>¡Hola! Soy Anicia</h1>
                 
-                <p>¡Hola! Soy Anicia Flores, una venezolana inmersa en un emocionante proceso de reinvención  profesional. Antes de este momento trabajé como profesora de Lengua, Literatura y de otras áreas.<br><br>
+                <p>¡Hola! Soy Anicia Flores, una venezolana inmersa en un emocionante proceso de reinvención profesional. Antes de este momento trabajé como profesora de Lengua, Literatura y de otras áreas.<br><br>
                      
-                Hoy por hoy, debido a mi pasión por adquirir nuevas habilidades, estoy  incursionando en un área más técnica, en las tecnología de la información (IT): Desarrollo Frontend (Html. Css y JavaScript), Diseño UX/UI (Figman, Adobe Photoshop, Adobe Illustrator)y Desarrollo Backend (Node.JS, MongoDB, SQL) y Marketing. <br><br>
+                Hoy por hoy, debido a mi pasión por adquirir nuevas habilidades, estoy incursionando en un área más técnica, en las tecnologías de la información (IT): Desarrollo Frontend (HTML, CSS y JavaScript), Diseño UX/UI (Figma, Adobe Photoshop, Adobe Illustrator) y Desarrollo Backend (Node.js, MongoDB, SQL) y Marketing.<br><br>
                     
                 Técnicamente, me estoy desafiando a mí misma, actualizándome y explorando nuevas posibilidades para mi vida. Esto es tan emocionante como haber emprendido un viaje a tierras desconocidas.
                 </p>
-
-                <a href="https://drive.google.com/file/d/1G_3VLoLucrMwjHbCCaAG2jx8glXUUa3C/view?usp=sharing" target="_blank" rel="noopener nooreferrer" class="boton">Descarga mi CV</a>
-                <button id="cambiarEstilo">Cambiar Estilo</button>
+          
+           
+               <a href="https://drive.google.com/file/d/1G_3VLoLucrMwjHbCCaAG2jx8glXUUa3C/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="boton">Descarga mi CV</a> 
                  
-            </article> 
-
-            
-            
+            </article>            
         </section>     
        
         <section class="contacto" id="contacto">
             <article class="text">
-
                 <h2>Hablemos</h2>
 
-                <p>¿Sabías que (según  "The Business Impact of Online Customer Experience", estudio de Forrester Research)  el 88% de los usuarios no regresan a un sitio web después de tener una mala experiencia de usuario? <br><br>
+                <p>¿Sabías que según "The Business Impact of Online Customer Experience", estudio de Forrester Research, el 88% de los usuarios no regresan a un sitio web después de tener una mala experiencia de usuario?<br><br>
 
-                ¿Que de los 5 aspectos clave a atender para mejorar esa estadística 4  están directamente relacionados con el diseño del sitio? <br><br>
+                ¿Que de los 5 aspectos clave a atender para mejorar esa estadística 4 están directamente relacionados con el diseño del sitio?<br><br>
                     
-                Esto es, no tienen: <br>
+                Esto es, no tienen:<br>
+                1. Un Diseño Intuitivo.<br>
+                2. Un Contenido Relevante.<br>
+                3. Una Comunicación Clara.<br>
+                4. No saben dónde acceder a Atención al cliente.<br><br>
                     
-                   
-                    1. Un Diseño Intuitivo. <br>
+                Si algunos de estos aspectos falla, 9 de cada 10 personas que ingresen a tu web o tu App no regresarán y tampoco comprarán nada de ti.<br><br>
                     
-                    2. Un Contenido Relevante. <br>
-                    
-                    3. Una Comunicación Clara.<br>
-                    
-                    4. No saben dónde acceder a Atención al cliente. <br><br>
-                    
-                 Si algunos de estos aspectos falla, 9 de cada 10 personas que ingresen a tu web o tu App no regresará y tampoco comprarán nada de ti.
-                    
-                     <br> <br>                  
-                    Bien, justo <em>ese es mi trabajo, asegurarme de que quien entre, le guste, se quede y, si es posible, compre en el momento o en una nueva visita</em> porque el sitio le resulta amigable.
-                    <br><br>
-                    ¿Te parece si conversamos?</p>
-
-                </article>
+                Bien, justo <em>ese es mi trabajo, asegurarme de que quien entre, le guste, se quede y, si es posible, compre en el momento o en una nueva visita</em> porque el sitio le resulta amigable.<br><br>
+                ¿Te parece si conversamos?</p>
+            </article>
         </section>
                 
         <section class="iconos">
-
             <ul>
                 <li>
-                    <a href="mailto:redactorweboficial%40gmail.com?subject=hola" target="_blank" rel="noopener nooreferrer" class="mail"><img src="img/mail.png" alt="correo electrónico"></a>
+                    <a href="mailto:redactorweboficial%40gmail.com?subject=hola" target="_blank" rel="noopener noreferrer" class="mail"><img src="./img/bandeja-de-entrada.png" alt="correo electrónico"></a>
                 </li>
                 
                 <li>
-                    <a href="https://github.com/AniciaFlores" target="_blank" rel="noopener nooreferrer"  class="github"><img src="img/github.png" alt="icono de github"></a>
+                    <a href="https://github.com/AniciaFlores" target="_blank" rel="noopener noreferrer" class="github"><img src="./img/github.png" alt="icono de github"></a>
                 </li>
                              
                 <li>
-                    <a href="https://www.linkedin.com/in/anicia-flores-3545b2257/" target="_blank" rel="noopener nooreferrer" class="linkd"><img src="img/linkedin.png" alt="icono de linkedin"></a>
+                    <a href="https://www.linkedin.com/in/anicia-flores-3545b2257/" target="_blank" rel="noopener noreferrer" class="linkd"><img src="./img/Linkdin.png" alt="icono de linkedin"></a>
                 </li>
 
                 <li>
-                    <a href="https://www.instagram.com/zanderwhitehurst/?hl=es
-                    " target="_blank" rel="noopener nooreferrer" class="behance"><img src="img/behance.png" alt="icono de behance"></a>
+                    <a href="https://www.behance.net/gallery/175076173/Compare360App" target="_blank" rel="noopener noreferrer" class="behance"><img src="./img/Behance (2).png" alt="icono de behance"></a>
                 </li>
             </ul>
-                   
         </section>
 
-</main>
+    </main>
 
     <footer>
         <p>&copy; Anicia Flores✨</p>
@@ -120,3 +109,4 @@
     <script src="./js/main.js"></script>
 </body>
 </html>
+
