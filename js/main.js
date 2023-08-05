@@ -1,3 +1,5 @@
+
+//Efecto 'activo' en los botones del nav
 const links = document.querySelectorAll('nav li a');
 
 links.forEach(link => {
@@ -7,32 +9,29 @@ links.forEach(link => {
   });
 });
 
-//Botón CAMBIAR Estilo de la página
-
+// Botón CAMBIAR Estilo de la página (botón oculto en el móvil)
 const cambioBtn = document.querySelector('#cambiarEstilo');
+const modoBotonMobile = document.querySelector('#modoBotonMobile');
 
-cambioBtn.addEventListener('click', function(){
+function cambiarModo() {
   document.body.classList.toggle('cambio-estilo');
-});
-
-const menuHamburg = document.querySelector('#menu_hamburguer')
-
-//Aquí estoy vreificaando en consola que sí tomé el elemento que quiero modificar
-console.log(menuHamburg);
-
-menuHamburg.addEventListener('click', function(){
-  document.body.classList.toggle('mobile-menu-active')
-});
-
-//galeria
-/*
-const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
-
-function showSlide() {
-  slides.forEach(slide => slide.classList.remove('show'));
-  slides[currentSlide].classList.add('show');
-  currentSlide = (currentSlide + 1) % slides.length;
 }
 
-setInterval(showSlide, 3000); // Cambia la imagen cada 3 segundos (3000 milisegundos)*/
+// Asignar la función al botón original (oculto en móvil)
+cambioBtn.addEventListener('click', cambiarModo);
+
+// Asignar la función al botón específico para móvil
+modoBotonMobile.addEventListener('click', cambiarModo);
+
+
+//Menú hamburguesa
+const menuHamburg = document.querySelector('#menu_hamburguer');
+
+//Aquí estoy vreificaando en consola que sí tomé el elemento que quiero modificar
+//console.log(menuHamburg);
+
+menuHamburg.addEventListener('click', function () {
+  document.body.classList.toggle('mobile-menu-active');
+});
+
+

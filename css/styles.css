@@ -29,8 +29,14 @@ body{
 }
 
 /*Aquí está la funcionalidad del Botón Modo Claro-Oscuro*/
+
+.cambio-estilo figure img{
+    border: 2px solid rgb(113, 112, 112);
+    box-shadow: 1px 1px 1px 1px #817e7e;  /*Agrega el estilo de sombra */
+
+}
+
 .cambio-estilo .boton{
-    border: 2px solid #650c15; /* ancho del borde, estilo y color */
     color:  #fefcfc;
 }
 
@@ -52,7 +58,7 @@ body{
     background-color: #324343;      
 }
 
-/*Aquí finaliza botón claor-oscuro*/
+/*Aquí finaliza la funcionalidad del botón claor-oscuro para Desktop*/
 
 
 header {
@@ -72,15 +78,16 @@ header {
    
 }
 
-
-.logo {
-    max-height: 80px;
-    max-width: 200px;
-    margin-top: 0px;
-     
+.logo-contaniner, .logo {
+    max-height: 60px;
+    max-width: 65px;
+    margin-top: 5px;
+    margin-left: 0; 
+    position:relative;
+    z-index: 9999;   
 }
 
-/* Boton selector de Modo Claro-oscuro*/
+/* Boton selector de Modo Claro-oscuro Desktop*/
 
 .checkbox-wrapper-25 input[type="checkbox"] {
     /* Estilo para el estado no seleccionado (unchecked) */
@@ -124,24 +131,86 @@ header {
     width: 50px;
 }
 .checkbox-wrapper-25{
-    position: absolute;
+    position:absolute;
     top: 85px;
-    right: 0;
-   
-    
+    right: 8px;
+    z-index: 999;
     transform: translate(-50%, 50%);
-    
-  /* Estilos adicionales para el botón */
 }
-  /*Aquí termina el botón selector Modo claro-oscuro*/
+ 
+
+/*Botón Modo claro-oscuro versión para Móvil*/  
+
+#modoBotonMobile {
+    font-size: 14px; 
+    padding: 8px 12px; /* Cambia el relleno del botón para hacerlo más pequeño */
+  }
+
+
+/* Estilos para el botón estilo switch */
+
+.switch {
+  position: absolute;
+  width: 55px;
+  height: 15px;
+  margin-left: 55%;
+  margin-top: 7%;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: #324343;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 0px;
+  bottom: -5px;
+  background-color:#DF3D71;
+  transition: .4s;
+  box-sizing: border-box;
+  border: 10px solid white;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #DF3D71;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+  background: #324343;
+  box-sizing: border-box;
+  border: 10px solid white;
+}
+
+/*Menú hamburguesa*/
 
 #menu_hamburguer{
     background: transparent;
     border: 0;
     outline: 0;
-    font-size: 26px;
-    width: 40px;
-    height: 40px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 22px;
 }
 
 #close_menu{
@@ -165,7 +234,7 @@ body.mobile-menu-active #open_menu{
 }
 
 body.mobile-menu-active header{
-    height: 30vh;
+    height: 50vh;
     flex-wrap: wrap;
     align-items: flex-start;
     transition: height 0.3s;
@@ -181,7 +250,7 @@ body.mobile-menu-active nav ul{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 100%;
+    height: 50%;
 }
 /*Fin menu hamburguer*/
 
@@ -189,6 +258,7 @@ body.mobile-menu-active nav ul{
 nav ul{
     display: flex;
     font-size: 20px;
+    margin-right: 10px;
 }
 
 .active{
@@ -229,7 +299,7 @@ nav ul li a:hover{
 /*Fin Nav*/
 
 main {
-    max-width: 1200px;
+    max-width: 100%;
     margin: auto;
     width: 80%;
 }
@@ -238,7 +308,7 @@ main {
 h1{
     font-size: 48px;
     text-align: center;
-    margin-top: 20%;
+    margin-top: 50%;
     
 }
 
@@ -261,18 +331,62 @@ h2{
     justify-content: center;
   }
 
+.floating-image, h1{
 
-figure img{
-    width: 300px;
-    height: 300px;
+    animation: fadeInLeft 1s;
+}
+
+@keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+figure {
+    width: 250px; 
+    height: 250px; 
     border-radius: 50%;
-    object-fit: cover;
-    margin-top: 50%;
-   
     
 }
 
+figure img{
+    width: 250px;
+    height: 250px;
+    border: 1px solid rgb(143, 77, 77);
+    
+    box-shadow: 1px 1px 1px 1px #817e7e; /* Agrega el estilo de sombra */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 50%;
+    transition: transform 0.3s ease; /* Transición suave para la animación */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);  
+}
 
+/* Animación personalizada para flotar */
+@keyframes flotar {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-10px);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Aplicar la animación al pasar el cursor por encima de la imagen */
+  figure img:hover {
+    animation: flotar 2s infinite;
+  }
 
 .inicio p {
     font-size: 18px;
@@ -288,28 +402,26 @@ figure img{
     background: transparent;
     padding: 0;
     border: none;
-  }
+}
   
  
 /*Botón de CV */
-.boton{
-    border: 2px solid #650c15; /* ancho del borde, estilo y color */
+.boton {
     color:  #1a1818;
-    font-size: 20px;
-     
+    font-size: 15px;
     padding: 10px 20px;
-    margin-left: 20%;
+    margin-left: 26%;
     border-radius: 10px;
-   
     text-align: center;
     text-decoration: none;
-    box-shadow: 2px 2px 2px #cecbcb;
+    box-shadow: 1px 1px 1px 1px #aa9797; /* Agrega el estilo de sombra */
 }
 .boton:hover {
     background-color: #650c15;
     transition: .5s;
     color: #f6f2f2;
-    font-size: 22px ;
+    font-size: 25px ;
+    
   }
 
  /*Fin del botón de CV*/ 
@@ -317,7 +429,7 @@ figure img{
 .contacto{
     
     min-height: 40vh;
-    width: 100%;
+    width: 95%;
     margin-top: 100px;
     margin-bottom: 30px;
     border-radius: 10px;
@@ -337,7 +449,7 @@ p{
 }
 
 
- .iconos ul{
+.iconos ul{
     display: flex;
     margin-bottom: 60px;
     flex-flow: row;
@@ -345,11 +457,14 @@ p{
  }
 
 
- .iconos a img {
-    max-width: 20%; 
+.iconos a img {
+    max-width: 35%; 
     height: auto;
-    margin-left: 40%;
-    
+    margin-left: 20%;   
+}
+
+.iconos a img:hover {
+    transform: translateY(20px);
 }
 
 footer{
@@ -379,19 +494,37 @@ section{
 
 /*desktop*/
 @media(min-width:1024px){
+    .logo-contaniner, .logo {
+        max-height: 190px;
+        max-width: 95px;  
+    }
+
     .inicio{ 
         flex-direction: row;
         
     }
+    figure {
+        width: 300px; 
+        height: 300px;       
+    }
+    
+    figure img{
+        width: 300px;
+        height: 300px;
+        margin-top: 25%;       
+    }
+
     h1{
         font-size: 42px;
         text-align: left;
         margin-left: 5%;
+        margin-top: 20%;
     }
-    
+
 
     .boton{
         margin-left: 5%;
+        font-size: 20px;
               
     }
     button{
@@ -409,7 +542,15 @@ section{
     .checkbox-wrapper-25 input{
         display: block;
     }
-
+    .switch {   
+        display: none;
+}
+    .iconos a img {
+        max-width: 25%; 
+        height: auto;
+        margin-left: 25%;
+    
+}
 }
 /*tablet*/
 
@@ -419,6 +560,7 @@ section{
         font-size: 40px;
         text-align: center;
         margin-left: 5%;
+        margin-top: 30%;
     }
     .boton{
         margin-left: 35%;
@@ -428,6 +570,21 @@ section{
         margin-top: 5%;
     }
     body.mobile-menu-active header {
-        height: 36vh;
+        height: 50vh;
+    }
+    .switch {
+        width: 55px;
+        height: 15px;
+        margin-left: 80%;
+        margin-top: 3.5%;
+      }
+    .contacto{
+        margin-top: 40px;       
+    }
+    .iconos a img {
+        max-width: 25%; 
+        height: auto;
+        margin-left: 25%;
+        
     }
 }
