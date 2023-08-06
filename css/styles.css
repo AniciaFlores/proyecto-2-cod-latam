@@ -40,6 +40,10 @@ body{
     color:  #fefcfc;
 }
 
+.cambio-estilo #menu_hamburguer{
+    color: #e6e3e3;
+}
+
 .cambio-estilo .cambioEst nav ul li a {
     font-family:Georgia, 'Times New Roman', Times, serif;
     box-shadow: 2px 2px 2px #cecbcb;
